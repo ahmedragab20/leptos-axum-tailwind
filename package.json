@@ -1,0 +1,16 @@
+{
+  "name": "axum-leptos-01",
+  "version": "1.0.0",
+  "description": "<picture>     <source srcset=\"https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_Solid_White.svg\" media=\"(prefers-color-scheme: dark)\">     <img src=\"https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg\" alt=\"Leptos Logo\"> </picture>",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./style/input.css -o ./target/site/pkg/axum-leptos-01.css",
+    "watch": "npx tailwindcss -i ./style/input.css -o ./target/site/pkg/axum-leptos-01.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
