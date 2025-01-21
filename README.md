@@ -1,8 +1,6 @@
 # Axum-Leptos Full-Stack Application
 
-A modern, full-stack web application template combining the power of Rust's ecosystem for both frontend and backend development.
-
-_the template is based on the [Axum-Leptos template](https://github.com/leptos-rs/leptos/tree/main/examples/tailwind_axum)_
+_A "2025" version of the official [Axum-Leptos template](https://github.com/leptos-rs/leptos/tree/main/examples/tailwind_axum)_
 
 ## Tech Stack
 
@@ -12,12 +10,19 @@ _the template is based on the [Axum-Leptos template](https://github.com/leptos-r
   - WebAssembly - For running Rust code in the browser
 
 - **Backend**:
-  - [Axum](https://github.com/tokio-rs/axum) - A ergonomic and modular web framework built with Tokio
+  - [Axum](https://github.com/tokio-rs/axum) - Ergonomic and modular web framework built with Tokio, Tower, and Hyper
   - [Tokio](https://tokio.rs/) - Asynchronous runtime for Rust
-  - [cargo-leptos](https://github.com/leptos-rs/cargo-leptos) - Build tool for Leptos applications
-
+  - [Tower](https://github.com/tower-rs/tower) - Tower is a library of modular and reusable components for building robust networking clients and servers.
+  - [Tower-http](https://github.com/tower-rs/tower-http) - HTTP specific Tower utilities
+  
 - **Testing**:
   - [Playwright](https://playwright.dev/) - End-to-end testing framework
+
+- **Other**:
+  - [reqwasm](https://github.com/koute/reqwasm) - A simple HTTP client for WebAssembly
+  - [serde](https://serde.rs/) - A data serialization framework for Rust
+  - [serde_json](https://serde.rs/json.html) - A JSON serialization/deserialization library for Rust
+  - [cargo-leptos](https://github.com/leptos-rs/cargo-leptos) - Build tool for Leptos applications
 
 ## Getting Started
 
@@ -28,7 +33,6 @@ _the template is based on the [Axum-Leptos template](https://github.com/leptos-r
 rustup toolchain install nightly --allow-downgrade
 rustup target add wasm32-unknown-unknown
 ```
-
 2. Install cargo-leptos:
 ```bash
 cargo install cargo-leptos --locked
@@ -63,14 +67,42 @@ cargo leptos end-to-end
 ## Project Structure
 
 - `src/`
-  - `main.rs` - Server entry point
-  - `lib.rs` - Shared code between client and server
-  - `app.rs` - Main application component
+  - `main.rs` - Server entry point with Axum configuration
+  - `lib.rs` - Shared code and WASM hydration setup
+  - `app.rs` - Main application component and routing setup
+  - `components/` - Reusable UI components
+    - `Counter.rs` - Example counter component
+    - `mod.rs` - Components module definitions
+  - `pages/` - Application pages/routes
+    - `Home.rs` - Homepage component
+    - `About.rs` - About page with API integration
+    - `mod.rs` - Pages module definitions
+  - `server/` - Backend server code
+    - `handlers.rs` - API endpoint handlers
+    - `routes.rs` - API route definitions
+    - `mod.rs` - Server module setup
 - `style/` - CSS and TailwindCSS files
-- `end2end/` - End-to-end tests
-- `Cargo.toml` - Rust dependencies
+- `end2end/` - End-to-end tests with Playwright
+  - `tests/` - Test specifications
+  - `playwright.config.ts` - Playwright configuration
+- `public/` - Static assets
+- `Cargo.toml` - Rust dependencies and build configuration
 - `package.json` - Node.js dependencies
+- `tailwind.config.js` - TailwindCSS configuration
+
+## Features
+
+- Full-stack Rust development with shared types
+- Server-side rendering (SSR) with hydration
+- Client-side routing
+- API integration example
+- Reactive state management
+- Modern CSS with TailwindCSS
+- End-to-end testing setup
+- Development hot-reload
 
 ## License
 
+
 This project is released under the Unlicense. Feel free to use it as a starting point for your own applications.
+
