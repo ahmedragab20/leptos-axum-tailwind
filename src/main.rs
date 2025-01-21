@@ -2,8 +2,8 @@
 #[tokio::main]
 async fn main() {
     use axum::Router;
-    use axum_leptos_01::app::*;
-    use axum_leptos_01::server;
+    use axum_leptos_tailwind_template::app::*;
+    use axum_leptos_tailwind_template::server;
     use leptos::logging::log;
     use leptos::prelude::*;
     use leptos_axum::{generate_route_list, LeptosRoutes};
