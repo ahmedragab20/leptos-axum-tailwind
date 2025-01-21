@@ -46,11 +46,15 @@ cd end2end && npm install
 
 ### Development
 
-1. Start the development server:
+1. Start the development server and Tailwind watcher in separate terminals:
 ```bash
+# Terminal 1: Start the Leptos dev server
 cargo leptos watch
+
+# Terminal 2: Watch for Tailwind changes
+npm run watch
 ```
-This will start your application at `127.0.0.1:3000`
+This will start your application at `127.0.0.1:3000` and automatically rebuild CSS when Tailwind classes change.
 
 2. For production build:
 ```bash
